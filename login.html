@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
     <title>LEVITECH DRAFT</title>
     <link rel="stylesheet" href="style.css">
-
-    <style>
-        :root {
+ 
+ <style>
+    :root {
             --primary-color: #2e7d32;
             --secondary-color: #7cb342;
             --accent-color: #ff9800;
@@ -17,22 +18,22 @@
             --forum-user: #e8f5e9;
             --forum-expert: #e3f2fd;
         }
-
+        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-
+        
         body {
-            background-color: gray;
+            background-color : gray;
             width: 100%;
             height: 100px;
             margin: auto;
-        }
+            }
 
-        header {
+            header {
             background-color: white;
             box-shadow: var(--shadow);
             position: sticky;
@@ -41,10 +42,10 @@
         }
 
         .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 15px;
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 15px;
         }
 
         .feature-card {
@@ -53,7 +54,7 @@
             padding: 25px;
             margin-top: 220px;
             float: left;
-            margin-left: 160px;
+            margin-left: 160px ;
             box-shadow: var(--shadow);
             transition: transform 0.3s;
             text-align: center;
@@ -65,47 +66,43 @@
             justify-content: space-between;
             align-items: center;
             padding: 15px 0;
-        }
+            }
 
-        .logo {
+        .logo{
             display: flex;
             align-items: center;
         }
+                .logo img{
+                    height: 50px;
+                    margin-right: 10px;
+                }
+                        .logo h1{
+                            color: var(--primary-color);
+                            font-size: 1.8rem;
+                        }
 
-        .logo img {
-            height: 50px;
-            margin-right: 10px;
-        }
-
-        .logo h1 {
-            color: var(--primary-color);
-            font-size: 1.8rem;
-        }
-
-        .nav-links {
+         .nav-links {
             display: flex;
             list-style: none;
         }
-
-        .nav-links li {
-            margin-left: 25px;
+                .nav-links li {
+                     margin-left: 25px;
+                    }
+                        .nav-links a {
+                            text-decoration: none;
+                            color: var(--text-color);
+                            font-weight: 500;
+                            transition: color 0.3s;
         }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text-color);
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
+        
         .nav-links a:hover {
             color: var(--primary-color);
         }
 
-        .login {
+        .login{
             color: white;
-            width: 300px;
-            height: 450px;
+            width: 300;
+            height: 450;
             background: linear-gradient(to top, green, green);
             position: absolute;
             top: 300px;
@@ -114,16 +111,16 @@
             padding: 30px;
         }
 
-        .login h2 {
-            width: 250px;
-            font-family: Arial;
-            text-align: center;
-            color: white;
-            font-size: 25px;
-            border-radius: 20px;
-            margin: 5px;
-            padding: 10px;
-        }
+                .login h2{
+                    width: 250px;
+                    font-family: Arial;
+                    text-align: center;
+                    color: white;
+                    font-size: 25px;
+                    border-radius: 20px;
+                    margin: 5px;
+                    padding: 10px;
+                }
 
         .btn {
             padding: 8px 20px;
@@ -133,106 +130,106 @@
             font-weight: 500;
             transition: all 0.3s;
         }
-
-        .btn-outline {
-            background: transparent;
-            border: 1px solid var(--primary-color);
-            color: var(--primary-color);
-        }
-
-        .btn-primary {
-            background-color: var(--primary-color);
-            color: white;
-        }
-
-        .btn-secondary {
-            background-color: var(--secondary-color);
-            color: white;
-        }
-
-        .btn-accent {
-            background-color: var(--accent-color);
-            color: white;
-        }
-
-        .btn:hover {
-            opacity: 0.9;
-            transform: translateY(-2px);
-        }
-
-        input {
+                .btn-outline {
+                    background: transparent;
+                    border: 1px solid var(--primary-color);
+                    color: var(--primary-color);
+                }                
+                        .btn-primary {
+                            background-color: var(--primary-color);
+                            color: white;
+                        }
+                                .btn-secondary {
+                                    background-color: var(--secondary-color);
+                                    color: white;
+                                }                              
+                                        .btn-accent {
+                                            background-color: var(--accent-color);
+                                            color: white;
+                                        }                                        
+                                                .btn:hover {
+                                                    opacity: 0.9;
+                                                    transform: translateY(-2px);
+                                                }
+        input{
             padding: 5px 8px;
             border-radius: 5px;
             background-color: #e8f5e9;
             color: black;
             font-weight: bold;
         }
-    </style>
+                
+ </style>
 
 </head>
+
 
 <body>
     <div class="main">
         <header>
-            <div class="container">
+            <div class = "container">
                 <div class="nav">
                     <div class="logo">
-                        <img src="data:image/svg+xml;base64,..." alt="LeviTech Logo">
-                        <h1>LeviTech Platform</h1>
+                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cGF0aCBmaWxsPSIjMkU3RDMyIiBkPSJNMjU2IDhDMTE5IDggOCAxMTkgOCAyNTZzMTExIDI0OCAyNDggMjQ4IDI0OC0xMTEgMjQ4LTI0OFMzOTMgOCAyNTYgOHptMCA0NDhjLTExMC41IDAtMjAwLTg5LjUtMjAwLTIwMFMxNDUuNSA1NiAyNTYgNTZzMjAwIDg5LjUgMjAwIDIwMC04OS41IDIwMC0yMDAgMjAweiIvPjxwYXRoIGZpbGw9IiM3Q0IzNDIiIGQ9Ik0zNjMuNiAyMDMuN2MtMjAuMSA4LjUtNDAuNyAxMy42LTYyLjEgMTMuNnMtNDItNS4xLTYyLjEtMTMuNmMtNC4xLTEuNy04LjUtLjctMTEuNyAyLjhzLTUuMiA3LjUtMy41IDExLjdjMTMuMSAzMS4zIDQyLjkgNTMuNiA3Ny4zIDUzLjZzNjQuMi0yMi4zIDc3LjMtNTMuNmMxLjctNC4xLjctOC41LTIuOC0xMS43LTMuMS0zLjQtNy41LTQuNS0xMS43LTIuOHptLTE1NC4yIDM1Yy01LjQgMC0xMC40LTIuOS0xMy0xLjNzLTQuNiA0LjMtMy4yIDcuNmMxMi4zIDI5LjUgNDAuOSA0OS45IDc0LjcgNDkuOXM2Mi40LTIwLjQgNzQuNy00OS45YzEuNC0zLjMtLjItNi45LTMuMi03LjYtMi43LS43LTcuNi0xLjMtMTMtMS4zcy0xMC4zLjYtMTMgMS4zYy0zIC43LTQuNiA0LjMtMy4yIDcuNiA1LjcgMTMuNyAxOC42IDIzLjQgMzMuNSAyMy40czI3LjgtOS43IDMzLjUtMjMuNGMxLjQtMy4zLS4yLTYuOS0zLjItNy42LTIuNy0uNy03LjYtMS4zLTEzLTEuM3ptMC03MGMtNS40IDAtMTAuNC0yLjktMTMtMS4zcy00LjYgNC4zLTMuMiA3LjZjMTIuMyAyOS41IDQwLjkgNDkuOSA3NC43IDQ5LjlzNjIuNC0yMC40IDc0LjctNDkuOWMxLjQtMy4zLS4yLTYuOS0zLjItNy42LTIuNy0uNy03LjYtMS4zLTEzLTEuM3MtMTAuMy42LTEzIDEuM2MtMyAuNy00LjYgNC4zLTMuMiA3LjYgNS43IDEzLjcgMTguNiAyMy40IDMzLjUgMjMuNHMyNy44LTkuNyAzMy41LTIzLjRjMS40LTMuMy0uMi02LjktMy4yLTcuNi0yLjctLjctNy42LTEuMy0xMy0xLjN6Ii8+PC9zdmc+" alt="LeviTech Logo">
+                        <h1>LeviTech Platform</h1>   
                     </div>
 
-                    <ul class="nav-links">
-                        <li><a href="index.html">BACK TO MAIN</a></li>
-                        <li><a href="#profile">PROFILE</a></li>
-                        <li><a href="#eset">RESET</a></li>
-                        <li><a href="#support">CHATROOM</a></li>
-                    </ul>
-
-                </div>
-            </div>
-        </header>
+                        <ul class = "nav-links">
+                            <li><a href="jgaMain.html">BACK TO MAIN</a></li>
+                            <li><a href="#profile">PROFILE</a></li>
+                            <li><a href="#eset">RESET</a></li>
+                            <li><a href="#support">CHATROOM</a></li>
+                        </ul>
+                    
+                </div> 
+            </div>    
+        </header>       
     </div>
 
-    <div class="feature-card">
-        <p style="font-size: 2.5rem; align-content: center;">👤</p>
-        <h1 style="color: #1b5e20;">USER REGISTRY</h1>
-        <p><b>
+        <div class = "feature-card">
+            <p style="font-size: 2.5rem; align-content: center;">👤</p>
+            <h1 style="color: #1b5e20;">USER REGISTRY</h1>
+            <p><b>
                 THE START OF YOUR LOCALIZED CONTRIBUTION TOWARDS BETTER FOOD FOR YOUR PEERS <br>
                 HELP BEGINS AT YOUR FIRST USER REGISTER <br>
             </b></p>
-        <br>
-        <p>
-            SIGN UP OR LOGIN USING YOUR CREDENTIALS LOGGED <br>
-            WITHIN <b>LeviNET.</b> <br>
-        </p>
+            <br>
+            <br>
+            <p>
+                SIGN UP OR LOGIN USING YOUR CREDENTIALS LOGGED <br>
+                WITHIN <b>LeviNET.</b> <br>
+
+            </p>
+        </div>
+
+
+            <div class="login">
+                <h2 >Login / Register</h2>
+                <input type="email" placeholder="ENTER EMAIL">
+                <input type="psw" placeholder="ENTER PASSWORD">
+                <br>
+                
+                <a href="index.html">
+                <button class = "btn">LOGIN</button>
+                </a>
+
+                <br>
+                <br>
+
+                
+                <p class="register"><B>REGISTER HERE</B></p>
+                <button class = "btn" onclick="showMessage()">SIGN UP</button>
+                <p id="messageDisplay"></p>
+
+
+                <script>
+                    function showMessage() {
+                        document.getElementById("messageDisplay").innerHTML = "SITE STILL IN DEMO , LIVE REGISTRATIONS SOON !";
+                    }
+                </script>
+                
+            </div>
+        
     </div>
-
-    <div class="login">
-        <h2>Login / Register</h2>
-        <input type="email" placeholder="ENTER EMAIL">
-        <input type="password" placeholder="ENTER PASSWORD">
-        <br>
-
-        <!-- Corrected link to main page -->
-        <a href="index.html">
-            <button class="btn">LOGIN</button>
-        </a>
-        <br>
-        <br>
-
-        <p class="register"><b>REGISTER HERE</b></p>
-        <button class="btn" onclick="showMessage()">SIGN UP</button>
-        <p id="messageDisplay"></p>
-
-        <script>
-            function showMessage() {
-                document.getElementById("messageDisplay").innerHTML =
-                    "SITE STILL IN DEMO, LIVE REGISTRATIONS SOON!";
-            }
-        </script>
-
-    </div>
-
 </body>
-
 </html>
