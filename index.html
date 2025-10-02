@@ -674,8 +674,10 @@
                     <li><a href="#gallery">Gallery</a></li>
                 </ul>
                 <div class="auth-buttons">
+                    <a href = "login.html">
                     <button class="btn btn-outline" id="loginBtn">Login</button>
                     <button class="btn btn-primary" id="signupBtn">Sign Up</button>
+                    </a>
                 </div>
             </nav>
         </div>
@@ -1159,22 +1161,9 @@
     <script>
         // Simple JavaScript for interactive elements
         document.addEventListener('DOMContentLoaded', function() {
-            // Login/Signup buttons
-            const loginBtn = document.getElementById('loginBtn');
-            const signupBtn = document.getElementById('signupBtn');
-            
-            loginBtn.addEventListener('click', function() {
-                alert('Login feature will be implemented in the next version.');
-            });
-            
-            signupBtn.addEventListener('click', function() {
-                alert('Signup feature will be implemented in the next version.');
-            });
-            
+           
             // Navigation smooth scrolling
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
+
                     
                     const targetId = this.getAttribute('href');
                     if (targetId === '#') return;
