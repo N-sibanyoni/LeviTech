@@ -1,0 +1,1250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LeviTech - Growing Solutions Together</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Global Styles */
+        :root {
+            --primary-color: #2e7d32;
+            --secondary-color: #7cb342;
+            --accent-color: #ff9800;
+            --light-color: #f1f8e9;
+            --dark-color: #1b5e20;
+            --text-color: #333;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --forum-user: #e8f5e9;
+            --forum-expert: #e3f2fd;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f9f9f9;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        section {
+            padding: 60px 0;
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: white;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 50px;
+            margin-right: 10px;
+        }
+        
+        .logo h1 {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 25px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+        
+        .auth-buttons {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .btn {
+            padding: 8px 20px;
+            border-radius: 4px;
+            border: none;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .btn-secondary {
+            background-color: var(--secondary-color);
+            color: white;
+        }
+        
+        .btn-accent {
+            background-color: var(--accent-color);
+            color: white;
+        }
+        
+        .btn:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1591872203534-278fb085c7c9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+        
+        /* Features Section */
+        .features {
+            background-color: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            color: var(--primary-color);
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .feature-card {
+            background-color: var(--light-color);
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s;
+            text-align: center;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        .feature-card h3 {
+            margin-bottom: 15px;
+            color: var(--dark-color);
+        }
+        
+        /* Problem Section */
+        .problem {
+            background-color: #f5f5f5;
+        }
+        
+        .problem-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+        
+        .problem-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+        }
+        
+        .problem-stats {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+        }
+        
+        .stat {
+            margin-bottom: 20px;
+        }
+        
+        .stat h4 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        
+        /* Case Studies */
+        .case-studies {
+            background-color: white;
+        }
+        
+        .case-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .case-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s;
+        }
+        
+        .case-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .case-image {
+            height: 200px;
+            overflow: hidden;
+            background-color: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .case-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .case-card:hover .case-image img {
+            transform: scale(1.05);
+        }
+        
+        .case-content {
+            padding: 20px;
+        }
+        
+        .case-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        
+        .location {
+            color: #666;
+            font-style: italic;
+            margin-bottom: 15px;
+            display: block;
+        }
+        
+        /* Solution Section */
+        .solution {
+            background-color: var(--light-color);
+        }
+        
+        .solution-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        /* Tools Section */
+        .tools {
+            background-color: white;
+        }
+        
+        .tools-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .tool-card {
+            text-align: center;
+            padding: 30px;
+            border-radius: 8px;
+            background-color: var(--light-color);
+            box-shadow: var(--shadow);
+        }
+        
+        /* Target Market */
+        .target-market {
+            background-color: #f5f5f5;
+        }
+        
+        .market-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .market-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+        }
+        
+        .market-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        /* Forum Section */
+        .forum {
+            background-color: white;
+        }
+        
+        .forum-container {
+            display: grid;
+            grid-template-columns: 1fr 3fr;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .forum-sidebar {
+            background-color: var(--light-color);
+            padding: 20px;
+            border-radius: 8px;
+            height: fit-content;
+        }
+        
+        .forum-main {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: var(--shadow);
+        }
+        
+        .forum-thread {
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            background-color: white;
+            box-shadow: var(--shadow);
+        }
+        
+        .thread-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        
+        .thread-author {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        
+        .thread-time {
+            color: #777;
+        }
+        
+        .thread-content {
+            margin-bottom: 15px;
+        }
+        
+        .thread-actions {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .thread-actions button {
+            background: none;
+            border: none;
+            color: #777;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .thread-actions button:hover {
+            color: var(--primary-color);
+        }
+        
+        .reply-form {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+        }
+        
+        .reply-form textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            resize: vertical;
+            min-height: 80px;
+            margin-bottom: 10px;
+        }
+        
+        /* Crop Calculator */
+        .calculator {
+            background-color: #f5f5f5;
+        }
+        
+        .calculator-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .calculator-form {
+            background-color: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+        }
+        
+        .calculator-results {
+            background-color: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        
+        .result-item {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .result-item:last-child {
+            border-bottom: none;
+        }
+        
+        .result-label {
+            font-weight: 500;
+            color: var(--primary-color);
+        }
+        
+        /* Donation Section */
+        .donation {
+            background-color: white;
+        }
+        
+        .donation-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .donation-options {
+            background-color: var(--light-color);
+            padding: 25px;
+            border-radius: 8px;
+        }
+        
+        .donation-form {
+            background-color: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+        }
+        
+        .donation-type {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .donation-card {
+            flex: 1;
+            text-align: center;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .donation-card:hover,
+        .donation-card.active {
+            background-color: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+        
+        .donation-card i {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        
+        /* Photo Gallery */
+        .gallery {
+            background-color: #f5f5f5;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .gallery-item {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            height: 200px;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 50px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-section a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-section a:hover {
+            color: white;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 968px) {
+            .forum-container,
+            .calculator-container,
+            .donation-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .problem-content {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .donation-type {
+                flex-direction: column;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header with Navigation -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cGF0aCBmaWxsPSIjMkU3RDMyIiBkPSJNMjU2IDhDMTE5IDggOCAxMTkgOCAyNTZzMTExIDI0OCAyNDggMjQ4IDI0OC0xMTEgMjQ4LTI0OFMzOTMgOCAyNTYgOHptMCA0NDhjLTExMC41IDAtMjAwLTg5LjUtMjAwLTIwMFMxNDUuNSA1NiAyNTYgNTZzMjAwIDg5LjUgMjAwIDIwMC04OS41IDIwMC0yMDAgMjAweiIvPjxwYXRoIGZpbGw9IiM3Q0IzNDIiIGQ9Ik0zNjMuNiAyMDMuN2MtMjAuMSA4LjUtNDAuNyAxMy42LTYyLjEgMTMuNnMtNDItNS4xLTYyLjEtMTMuNmMtNC4xLTEuNy04LjUtLjctMTEuNyAyLjhzLTUuMiA3LjUtMy41IDExLjdjMTMuMSAzMS4zIDQyLjkgNTMuNiA3Ny4zIDUzLjZzNjQuMi0yMi4zIDc3LjMtNTMuNmMxLjctNC4xLjctOC41LTIuOC0xMS43LTMuMS0zLjQtNy41LTQuNS0xMS43LTIuOHptLTE1NC4yIDM1Yy01LjQgMC0xMC40LTIuOS0xMy0xLjNzLTQuNiA0LjMtMy4yIDcuNmMxMi4zIDI5LjUgNDAuOSA0OS45IDc0LjcgNDkuOXM2Mi40LTIwLjQgNzQuNy00OS45YzEuNC0zLjMtLjItNi45LTMuMi03LjYtMi43LS43LTcuNi0xLjMtMTMtMS4zcy0xMC4zLjYtMTMgMS4zYy0zIC43LTQuNiA0LjMtMy4yIDcuNiA1LjcgMTMuNyAxOC42IDIzLjQgMzMuNSAyMy40czI3LjgtOS43IDMzLjUtMjMuNGMxLjQtMy4zLS4yLTYuOS0zLjItNy42LTIuNy0uNy03LjYtMS4zLTEzLTEuM3ptMC03MGMtNS40IDAtMTAuNC0yLjktMTMtMS4zcy00LjYgNC4zLTMuMiA3LjZjMTIuMyAyOS41IDQwLjkgNDkuOSA3NC43IDQ5LjlzNjIuNC0yMC40IDc0LjctNDkuOWMxLjQtMy4zLS4yLTYuOS0zLjItNy42LTIuNy0uNy03LjYtMS4zLTEzLTEuM3MtMTAuMy42LTEzIDEuM2MtMyAuNy00LjYgNC4zLTMuMiA3LjYgNS43IDEzLjcgMTguNiAyMy40IDMzLjUgMjMuNHMyNy44LTkuNyAzMy41LTIzLjRjMS40LTMuMy0uMi02LjktMy4yLTcuNi0yLjctLjctNy42LTEuMy0xMy0xLjN6Ii8+PC9zdmc+" alt="LeviTech Logo">
+                    <h1>LeviTech</h1>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#problem">The Problem</a></li>
+                    <li><a href="#solutions">Solutions</a></li>
+                    <li><a href="#forum">Community Forum</a></li>
+                    <li><a href="#calculator">Crop Calculator</a></li>
+                    <li><a href="#donate">Donate</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                </ul>
+                <div class="auth-buttons">
+                    <button class="btn btn-outline" id="loginBtn">Login</button>
+                    <button class="btn btn-primary" id="signupBtn">Sign Up</button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h2>Growing Solutions Together</h2>
+            <p>Utilizing web platforms to improve food security through community gardens in South Africa and beyond</p>
+            <button class="btn btn-primary">Join Our Community</button>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Why LeviTech Matters</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🌱</div>
+                    <h3>Support Local Income</h3>
+                    <p>Turn surplus harvests into economic opportunities for communities.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌍</div>
+                    <h3>Climate Smart Agriculture</h3>
+                    <p>Help households grow healthy food in ways that are resilient to climate change.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">♻</div>
+                    <h3>Eco-Friendly Practices</h3>
+                    <p>Promote composting, organic growing, and water conservation techniques.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📚</div>
+                    <h3>Knowledge Building</h3>
+                    <p>Build expertise in gardening, nutrition, and environmental stewardship.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🤝</div>
+                    <h3>Community Strengthening</h3>
+                    <p>Foster bonds through shared gardening, especially in post-apartheid healing spaces.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Statement Section -->
+    <section class="problem" id="problem">
+        <div class="container">
+            <h2 class="section-title">The Challenge: Food Security & Climate Change</h2>
+            <div class="problem-content">
+                <div class="problem-image">
+                    <img src="https://images.unsplash.com/photo-1574943320219-553eb213f72d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="Dry soil and climate change impact">
+                </div>
+                <div class="problem-stats">
+                    <p>Community gardens have emerged as a powerful solution; offering fresh produce and shared purpose. But now, climate change is shifting weather patterns, draining water supplies, and damaging soil, making it hard for these gardens to survive let alone thrive.</p>
+                    <p>In South Africa, more than 12 million people face food insecurity every single day, highlighting the urgent need for sustainable solutions.</p>
+                    <div class="stat">
+                        <h4>12 million+</h4>
+                        <p>South Africans face food insecurity daily</p>
+                    </div>
+                    <div class="stat">
+                        <h4>60%</h4>
+                        <p>Of households in some regions are vulnerable to food insecurity</p>
+                    </div>
+                    <div class="stat">
+                        <h4>3x</h4>
+                        <p>Food prices have tripled in some areas over the past decade</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Studies Section -->
+    <section class="case-studies" id="case-studies">
+        <div class="container">
+            <h2 class="section-title">Case Studies & Success Stories</h2>
+            <div class="case-grid">
+                <div class="case-card">
+                    <div class="case-image">
+                        <img src="https://tse2.mm.bing.net/th/id/OIP.KzVPHSMe8QlbZoCqEs-sUgHaEc?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Soweto Urban Garden">
+                    </div>
+                    <div class="case-content">
+                        <h3>Soweto Urban Garden</h3>
+                        <span class="location">Gauteng Province, South Africa</span>
+                        <p>Tool banks and workshops offer hands-on training to the youth and locals, creating sustainable food sources and skills development.</p>
+                    </div>
+                </div>
+                <div class="case-card">
+                    <div class="case-image">
+                        <img src="https://th.bing.com/th/id/OIP.Jj4Qj5k_E347MOcOTh0KSwHaFj?w=215&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Ngqeleni Village Soil Restoration">
+                    </div>
+                    <div class="case-content">
+                        <h3>Ngqeleni Village Soil Restoration</h3>
+                        <span class="location">Eastern Cape, South Africa</span>
+                        <p>Promotion of composting, manure use, and crop rotation to restore soil health and improve agricultural yields.</p>
+                    </div>
+                </div>
+                <div class="case-card">
+                    <div class="case-image">
+                        <img src="https://th.bing.com/th/id/OIP.-4IM_KtMV8nWU7FQ48dVpAHaHa?w=178&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Kibera Slum Gardens">
+                    </div>
+                    <div class="case-content">
+                        <h3>Kibera Slum Gardens</h3>
+                        <span class="location">Nairobi, Kenya</span>
+                        <p>Innovative techniques like sack gardening and hydroponics are used to grow kale and spinach. Community groups offer training and support.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Forum Section -->
+    <section class="forum" id="forum">
+        <div class="container">
+            <h2 class="section-title">Community Forum</h2>
+            <p class="solution-content">Connect with other gardeners, share tips, ask questions, and get expert advice.</p>
+            
+            <div class="forum-container">
+                <div class="forum-sidebar">
+                    <h3>Forum Categories</h3>
+                    <ul>
+                        <li><a href="#">Gardening Tips</a></li>
+                        <li><a href="#">Soil Health</a></li>
+                        <li><a href="#">Water Conservation</a></li>
+                        <li><a href="#">Pest Control</a></li>
+                        <li><a href="#">Composting</a></li>
+                        <li><a href="#">Seed Exchange</a></li>
+                        <li><a href="#">Local Events</a></li>
+                    </ul>
+                    
+                    <h3>Top Contributors</h3>
+                    <ul>
+                        <li>GreenThumb22</li>
+                        <li>EcoWarrior</li>
+                        <li>GardenGuru</li>
+                        <li>CompostQueen</li>
+                        <li>RainwaterExpert</li>
+                    </ul>
+                </div>
+                
+                <div class="forum-main">
+                    <div class="forum-thread">
+                        <div class="thread-header">
+                            <span class="thread-author">GreenThumb22</span>
+                            <span class="thread-time">2 hours ago</span>
+                        </div>
+                        <div class="thread-content">
+                            <h3>Best crops for small urban gardens?</h3>
+                            <p>I have a small space in my backyard in Johannesburg and want to start a vegetable garden. What are the most productive crops for limited spaces?</p>
+                        </div>
+                        <div class="thread-actions">
+                            <button><i class="far fa-heart"></i> Like (12)</button>
+                            <button><i class="far fa-comment"></i> Reply (8)</button>
+                            <button><i class="far fa-bookmark"></i> Save</button>
+                        </div>
+                        
+                        <div class="reply-form">
+                            <textarea placeholder="Add your reply..."></textarea>
+                            <button class="btn btn-primary">Post Reply</button>
+                        </div>
+                    </div>
+                    
+                    <div class="forum-thread">
+                        <div class="thread-header">
+                            <span class="thread-author">CompostQueen</span>
+                            <span class="thread-time">1 day ago</span>
+                        </div>
+                        <div class="thread-content">
+                            <h3>Composting in small spaces</h3>
+                            <p>I live in an apartment but want to start composting. Any suggestions for compact composting systems that don't produce odors?</p>
+                        </div>
+                        <div class="thread-actions">
+                            <button><i class="far fa-heart"></i> Like (24)</button>
+                            <button><i class="far fa-comment"></i> Reply (15)</button>
+                            <button><i class="far fa-bookmark"></i> Save</button>
+                        </div>
+                    </div>
+                    
+                    <div class="forum-thread">
+                        <div class="thread-header">
+                            <span class="thread-author">WaterSaver</span>
+                            <span class="thread-time">3 days ago</span>
+                        </div>
+                        <div class="thread-content">
+                            <h3>Rainwater harvesting systems</h3>
+                            <p>With the water restrictions in Cape Town, I've started collecting rainwater. Here's my DIY setup that cost under R500.</p>
+                        </div>
+                        <div class="thread-actions">
+                            <button><i class="far fa-heart"></i> Like (42)</button>
+                            <button><i class="far fa-comment"></i> Reply (31)</button>
+                            <button><i class="far fa-bookmark"></i> Save</button>
+                        </div>
+                    </div>
+                    
+                    <div class="forum-thread">
+                        <h3>Start a new discussion</h3>
+                        <div class="form-group">
+                            <label for="thread-title">Title</label>
+                            <input type="text" id="thread-title" placeholder="What's your question?">
+                        </div>
+                        <div class="form-group">
+                            <label for="thread-content">Content</label>
+                            <textarea id="thread-content" rows="4" placeholder="Add details here..."></textarea>
+                        </div>
+                        <button class="btn btn-primary">Post Discussion</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Crop Calculator Section -->
+    <section class="calculator" id="calculator">
+        <div class="container">
+            <h2 class="section-title">Crop Calculator</h2>
+            <p class="solution-content">Plan how much food is needed per family and calculate the resources required for your garden.</p>
+            
+            <div class="calculator-container">
+                <div class="calculator-form">
+                    <h3>Calculate Your Garden Needs</h3>
+                    <div class="form-group">
+                        <label for="family-size">Family Size</label>
+                        <input type="number" id="family-size" min="1" max="20" value="4">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="garden-size">Garden Size (square meters)</label>
+                        <input type="number" id="garden-size" min="1" value="10">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="crop-type">Primary Crop</label>
+                        <select id="crop-type">
+                            <option value="tomato">Tomatoes</option>
+                            <option value="spinach">Spinach</option>
+                            <option value="cabbage">Cabbage</option>
+                            <option value="carrot">Carrots</option>
+                            <option value="potato">Potatoes</option>
+                            <option value="onion">Onions</option>
+                            <option value="beans">Beans</option>
+                            <option value="maize">Maize</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="region">Region</label>
+                        <select id="region">
+                            <option value="gauteng">Gauteng</option>
+                            <option value="western-cape">Western Cape</option>
+                            <option value="eastern-cape">Eastern Cape</option>
+                            <option value="kzn">KwaZulu-Natal</option>
+                            <option value="limpopo">Limpopo</option>
+                            <option value="mpumalanga">Mpumalanga</option>
+                            <option value="north-west">North West</option>
+                            <option value="free-state">Free State</option>
+                            <option value="northern-cape">Northern Cape</option>
+                        </select>
+                    </div>
+                    
+                    <button class="btn btn-primary" id="calculate-btn">Calculate</button>
+                </div>
+                
+                <div class="calculator-results">
+                    <h3>Your Gardening Plan</h3>
+                    <div class="result-item">
+                        <span class="result-label">Estimated Yield:</span>
+                        <span id="yield-result">40 kg</span>
+                    </div>
+                    
+                    <div class="result-item">
+                        <span class="result-label">Seeds Required:</span>
+                        <span id="seeds-result">2 packets</span>
+                    </div>
+                    
+                    <div class="result-item">
+                        <span class="result-label">Water Needs:</span>
+                        <span id="water-result">200 liters/week</span>
+                    </div>
+                    
+                    <div class="result-item">
+                        <span class="result-label">Fertilizer:</span>
+                        <span id="fertilizer-result">5 kg compost</span>
+                    </div>
+                    
+                    <div class="result-item">
+                        <span class="result-label">Growing Season:</span>
+                        <span id="season-result">August - November</span>
+                    </div>
+                    
+                    <div class="result-item">
+                        <span class="result-label">Estimated Cost:</span>
+                        <span id="cost-result">R 350</span>
+                    </div>
+                    
+                    <div class="result-item">
+                        <span class="result-label">Caloric Output:</span>
+                        <span id="calories-result">16,000 calories</span>
+                    </div>
+                    
+                    <button class="btn btn-secondary">Save Plan</button>
+                    <button class="btn btn-outline">Print Plan</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Donation Section -->
+    <section class="donation" id="donate">
+        <div class="container">
+            <h2 class="section-title">Donate & Support</h2>
+            <p class="solution-content">Give or receive seeds, tools, or support to help community gardens thrive.</p>
+            
+            <div class="donation-container">
+                <div class="donation-options">
+                    <h3>Ways to Support</h3>
+                    <div class="donation-type">
+                        <div class="donation-card active">
+                            <i class="fas fa-seedling"></i>
+                            <h4>Seeds</h4>
+                            <p>Donate quality seeds for community gardens</p>
+                        </div>
+                        <div class="donation-card">
+                            <i class="fas fa-tools"></i>
+                            <h4>Tools</h4>
+                            <p>Contribute gardening tools and equipment</p>
+                        </div>
+                    </div>
+                    
+                    <div class="donation-type">
+                        <div class="donation-card">
+                            <i class="fas fa-hand-holding-water"></i>
+                            <h4>Irrigation</h4>
+                            <p>Support water systems for dry regions</p>
+                        </div>
+                        <div class="donation-card">
+                            <i class="fas fa-book"></i>
+                            <h4>Knowledge</h4>
+                            <p>Share your expertise as a volunteer</p>
+                        </div>
+                    </div>
+                    
+                    <div class="donation-stats">
+                        <h3>Recent Donations</h3>
+                        <p>50 seed packets donated to Soweto Urban Garden</p>
+                        <p>20 gardening toolkits sent to Eastern Cape communities</p>
+                        <p>5 rainwater harvesting systems installed in KwaZulu-Natal</p>
+                    </div>
+                </div>
+                
+                <div class="donation-form">
+                    <h3>Make a Donation</h3>
+                    <div class="form-group">
+                        <label for="donor-name">Your Name</label>
+                        <input type="text" id="donor-name" placeholder="Enter your name">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="donor-email">Email Address</label>
+                        <input type="email" id="donor-email" placeholder="Enter your email">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="donation-type">Donation Type</label>
+                        <select id="donation-type">
+                            <option value="seeds">Seeds</option>
+                            <option value="tools">Gardening Tools</option>
+                            <option value="irrigation">Irrigation Equipment</option>
+                            <option value="financial">Financial Support</option>
+                            <option value="time">Volunteer Time</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="donation-value">Donation Details</label>
+                        <input type="text" id="donation-value" placeholder="e.g., 5 seed packets, 2 shovels, R200">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="donation-region">Preferred Region</label>
+                        <select id="donation-region">
+                            <option value="any">Any region in need</option>
+                            <option value="gauteng">Gauteng</option>
+                            <option value="western-cape">Western Cape</option>
+                            <option value="eastern-cape">Eastern Cape</option>
+                            <option value="kzn">KwaZulu-Natal</option>
+                            <option value="limpopo">Limpopo</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="donation-message">Message (optional)</label>
+                        <textarea id="donation-message" rows="3" placeholder="Add a message for the recipient"></textarea>
+                    </div>
+                    
+                    <button class="btn btn-accent">Submit Donation</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photo Gallery Section -->
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <h2 class="section-title">Community Garden Gallery</h2>
+            <p class="solution-content">See the impact of community gardens across South Africa and beyond.</p>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://th.bing.com/th/id/OIP.xX12KCoCAeioDDBN-pizQwHaFj?w=206&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3" alt="Community Garden">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://th.bing.com/th/id/OIP.4FKdKpirCI8NW_XKKnEpGAHaF7?w=221&h=150&c=6&o=7&dpr=1.3&pid=1.7&rm=3" alt="Urban Gardening">
+                </div>
+                <div class="gallery-item">
+                    <img src="data:image/webp;base64,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" alt="Soil Restoration">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://tse3.mm.bing.net/th/id/OIP.G-DtCyxTI8rnHXtEUD8XaQHaFj?pid=ImgDet&w=185&h=138&c=7&dpr=1,3&o=7&rm=3" alt="Composting">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://agsci.oregonstate.edu/sites/agscid7/files/barley-harvest-1600.jpg" alt="Harvest">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://img.freepik.com/premium-photo/group-people-are-working-together-community-garden-they-are-planting-weeding-watering-plants_14117-112051.jpg?w=2000" alt="Community Work">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.summitmedia-digital.com/realliving/images/2022/09/26/shutterstock_762659677.jpg" alt="Rainwater Harvesting">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://tse1.mm.bing.net/th/id/OIP.cEJ7r1fhVcgLAnbrRA_IbQHaE7?w=980&h=653&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Fresh Produce">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>LeviTech</h3>
+                    <p>Growing solutions together — one garden, one family, one community at a time.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#problem">The Problem</a></li>
+                        <li><a href="#solutions">Solutions</a></li>
+                        <li><a href="#forum">Community Forum</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Platform Features</h3>
+                    <ul>
+                        <li><a href="#calculator">Crop Calculator</a></li>
+                        <li><a href="#donate">Donation Portal</a></li>
+                        <li><a href="#gallery">Photo Gallery</a></li>
+                        <li><a href="#">Resource Library</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li>Email: info@levitech.org</li>
+                        <li>Phone: +27 11 123 4567</li>
+                        <li>Johannesburg, South Africa</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 LeviTech. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple JavaScript for interactive elements
+        document.addEventListener('DOMContentLoaded', function() {
+            // Login/Signup buttons
+            const loginBtn = document.getElementById('loginBtn');
+            const signupBtn = document.getElementById('signupBtn');
+            
+            loginBtn.addEventListener('click', function() {
+                alert('Login feature will be implemented in the next version.');
+            });
+            
+            signupBtn.addEventListener('click', function() {
+                alert('Signup feature will be implemented in the next version.');
+            });
+            
+            // Navigation smooth scrolling
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Donation card selection
+            const donationCards = document.querySelectorAll('.donation-card');
+            donationCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    donationCards.forEach(c => c.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+            
+            // Crop calculator functionality
+            const calculateBtn = document.getElementById('calculate-btn');
+            calculateBtn.addEventListener('click', function() {
+                // Get values from form
+                const familySize = parseInt(document.getElementById('family-size').value);
+                const gardenSize = parseInt(document.getElementById('garden-size').value);
+                const cropType = document.getElementById('crop-type').value;
+                
+                // Simple calculations (in a real app, these would be more complex)
+                const yieldEstimate = gardenSize * 4; // kg
+                const seedsRequired = Math.ceil(gardenSize / 5); // packets
+                const waterNeeds = gardenSize * 20; // liters per week
+                const fertilizerNeeds = Math.ceil(gardenSize / 2); // kg
+                const costEstimate = gardenSize * 35; // Rands
+                const caloriesEstimate = yieldEstimate * 400; // rough estimate
+                
+                // Update results
+                document.getElementById('yield-result').textContent = yieldEstimate + ' kg';
+                document.getElementById('seeds-result').textContent = seedsRequired + ' packets';
+                document.getElementById('water-result').textContent = waterNeeds + ' liters/week';
+                document.getElementById('fertilizer-result').textContent = fertilizerNeeds + ' kg compost';
+                document.getElementById('cost-result').textContent = 'R ' + costEstimate;
+                document.getElementById('calories-result').textContent = caloriesEstimate.toLocaleString() + ' calories';
+                
+                // Set season based on region
+                const region = document.getElementById('region').value;
+                let season = 'Year-round';
+                if (region === 'western-cape') season = 'March - October';
+                if (region === 'gauteng') season = 'August - November';
+                if (region === 'eastern-cape') season = 'September - December';
+                document.getElementById('season-result').textContent = season;
+            });
+            
+            // Initialize calculator with default values
+            calculateBtn.click();
+            
+            // Forum reply functionality
+            const replyButtons = document.querySelectorAll('.thread-actions button:nth-child(2)');
+            replyButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const replyForm = this.closest('.forum-thread').querySelector('.reply-form');
+                    if (replyForm) {
+                        replyForm.classList.toggle('hidden');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
